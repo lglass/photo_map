@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block title %}Map {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block body %}
+<div id="img">
+  {% include "map.html" %}
+</div>
+{% endblock %}

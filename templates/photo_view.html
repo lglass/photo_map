@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}{{ data.name}} {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block body %}
+<div id="img">
+    <img src="{{ url_for('static', filename=data.name)}}"
+         class="img-responsive center-block" alt="">
+</div>
+{% endblock %}

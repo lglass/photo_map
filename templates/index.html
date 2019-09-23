@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block head %} {{ super() }} {% endblock %}
+{% block nav %}
+
+<form class="navbar-form navbar-left" role="search" name="cluster" action="/cluster" method="POST">
+    <div class="form-group">
+    <input type="string" name="clusterdistance" class="form-control" placeholder="Cluster distance">
+    km
+    </div>
+    <button type="Go" class="btn btn-default">Go</button>
+</form>
+
+
+{% endblock %}

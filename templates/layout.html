@@ -1,0 +1,59 @@
+{# base template #}
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %} - {{ config.APPNAME }}</title>
+    {% endblock %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    div#img {
+	height: 92vh;
+	background: black;
+    }
+
+    img {
+    image-orientation: from-image;
+    }
+
+    .img-responsive {
+    width: auto;
+    height: 100%;
+    }
+    </style>
+</head>
+<nav class="navbar">
+    <div class="navbar-header">
+    <span class="navbar-brand">{{ config.APPNAME }}</span>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/map/{{groupPager.current}}">Location</a> </li>
+        <li><a href="/map/{{groupPager.prev}}">&larr;</a> </li>
+        <li><a href="/map/{{groupPager.next}}">&rarr;</a> </li>
+        <li><a href="/photo/{{photoPager.current}}">Photo</a> </li>
+        <li><a href="/photo/{{photoPager.prev}}">&larr;</a> </li>
+        <li><a href="/photo/{{photoPager.next}}">&rarr;</a> </li>
+    </ul>
+    {% block nav %}{% endblock %}
+</nav>
+
+{% block body %}{% endblock %}
+
+</body>
+
+</html>
