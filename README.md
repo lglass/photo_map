@@ -68,7 +68,7 @@ Create Date                     : 2019:10:01 09:00:00
 These are the needed exif tags, so if they are not present, the program will not work.
 <br>
 
-The **clustering** algorithm used is DBScan ([https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN)), which often works well with geographical data. The distance *metric* used is based on the great circle distance, which is also used in aviation to calculate the distance flown by a plane. The *min_samples* is set to one, meaning there will be no outliers. *eps* is set by default to 5, the unit is kilometer (implemented in the metric function), it can be adjusted in the web application.
+The **clustering** algorithm used is DBScan ([https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN)), which often works well with geographical data. The distance *metric* used is based on the great circle distance, which is also used in aviation to calculate the distance flown by a plane. The *min_samples* is set to one, meaning there will be no outliers. *eps* is set by default to 5, the unit is kilometer (implemented in the metric function). It can be adjusted in the web application.
 
 
 ### Usage
@@ -89,11 +89,13 @@ The index view shows an overview map including all photos indicated by colored t
 <img src="./doc/index.png" alt="index" width="1200"/>
 <br>
 <br>
+
 Use the *Location* button to go to the first identified cluster of photos. Switch between clusters by using the left and right arrow buttons next to *Location*.
 
 <img src="./doc/location.png" alt="index" width="1200"/>
 <br>
 <br>
+
 Use the *Photo* button to switch from map view to photo view. Use the arrow buttons to browse through the photos.
 
 <img src="./doc/photo.png" alt="index" width="1200"/>
