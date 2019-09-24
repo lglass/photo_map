@@ -7,12 +7,12 @@ Start the flask server by running:
 
 And then head to http://localhost:9750/ in your browser.
 """
-import os
-from flask import Flask, render_template, redirect, request
 import sys
+
+from flask import Flask, render_template, redirect, request
+
 from pager import Pager
 from photo_tools import *
-
 
 if len(sys.argv) < 2:
     print("Command line input for photo directory missing\nPlease call\n$ python flask_app.py PHOTO_DIR")
@@ -42,7 +42,6 @@ table_group = table
 # pagers that help update the page, Pager class defined in pager.py
 photoPager = Pager(len(file_names))
 groupPager = Pager(max(cluster_labels) + 1)
-
 
 # Start flask app
 app = Flask(__name__, static_folder=STATIC_DIR)

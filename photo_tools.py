@@ -67,7 +67,6 @@ def _convert_to_degrees(value):
 
 
 def _determine_reference_gps(name, value):
-
     ref_dict = {"latitude": {0: "N", 1: "S"}, "longitude": {0: "E", 1: "W"}}
     if value < 0:
         ref_flag = 1
@@ -101,6 +100,9 @@ def _format_gps(name, value):
 def fake_exif(image: Image, lat_long: list, datetime: str, fname: str):
     """
     Fake exif tag formatted gps data.
+    :param fname:
+    :param datetime:
+    :param image:
     :param lat_long: list of longitude and latitude
     :return: dictionary
     """
@@ -178,7 +180,7 @@ def avg_datetime(arr):
     :return:
     """
     dt_min = arr.min()
-    deltas = [x-dt_min for x in arr]
+    deltas = [x - dt_min for x in arr]
     return dt_min + functools.reduce(operator.add, deltas) / len(deltas)
 
 
@@ -287,7 +289,7 @@ def get_map(lat_long, save, colors=None):
     """
     Create map and scale to fit minimum and maximum values of latitude/ longitude
 
-    :param cluster_labels:
+    :param colors:
     :param save:
     :param lat_long:
     :return:
@@ -340,14 +342,16 @@ def link_images(src_dir, dst_dir="./static/images"):
 def filter_cluster(x, n: int, cluster_labels):
     """
     Filter array (one of FILES, LOCS, TIMES) or list (table) to contain points belonging to cluster number n.
+    :param cluster_labels:
     :param x:
     :param n:
     :return:
     """
     if type(x) == np.ndarray:
-        return x[np.where(cluster_labels==n)]
+        return x[np.where(cluster_labels == n)]
     elif type(x) == list:
-        return [x[i] for i in np.where(cluster_labels==n)[0]]
+        return [x[i] for i in np.where(cluster_labels == n)[0]]
+
 
 def sort_cluster(x: list, t: np.ndarray) -> list:
     """
@@ -357,4 +361,3 @@ def sort_cluster(x: list, t: np.ndarray) -> list:
     :return:
     """
     return [x[i] for i in np.argsort(t)]
-
