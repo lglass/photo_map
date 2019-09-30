@@ -1,5 +1,7 @@
 ## Photo Map
 
+<img src="./doc/index.png" alt="index" width="500"/>
+
 The aim of this project is a pure Python web application for viewing pictures, grouped by location, on an interactive map.
 
 So, if you want to put a bit of oomph into your photo viewing experience and have some experience with Python, this project might interest you :)
